@@ -326,7 +326,7 @@ if (!stir::is_null_ptr(dynamic_cast<const stir::ProjDataInfoBlocksOnCylindrical 
   // test
   {
     stir::CartesianCoordinate3D<float> coord_0, coord_1;
-    auto& pdi = dynamic_cast<const stir::ProjDataInfoCylindricalNoArcCorr &>(stir_proj_data_info);
+    auto& pdi = dynamic_cast<const stir::ProjDataInfoCylindricalNoArcCorr &>(stir_proj_data_info); // **ERROR** // this is the error for 'std::bad_cast'. This needs a proper cast based on scanner geometry information
     for (unsigned int r=0; r< static_cast<unsigned>(stir_scanner->get_num_rings()); ++r)
       for (unsigned int d=0; d < static_cast<unsigned>(stir_scanner->get_num_detectors_per_ring()); ++d)
         {
